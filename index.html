@@ -373,8 +373,9 @@
     <div class="hero-pill done">✓ Insurance — Allianz paid</div>
     <div class="hero-pill done">✓ Accommodation — London (Marlin) booked, pays 14 Sep</div>
     <div class="hero-pill done">✓ Accommodation — Athens (Chalandri) main base booked</div>
-    <div class="hero-pill">⟳ Limeni Accommodation — Placeholder (26–28 Sep, flexible)</div>
-    <div class="hero-pill">⟳ Xylokastro &amp; Lefkada — Placeholders (2–6 Oct, not booked in advance)</div>
+    <div class="hero-pill">⟳ Accommodation — Stoupa (Mani) tentative, pays 2 Sep</div>
+    <div class="hero-pill">⟳ Limeni Accommodation — Placeholder (26–28 Sep)</div>
+    <div class="hero-pill">⟳ Xylokastro &amp; Lefkada — Placeholders (2–6 Oct, unbooked)</div>
     <div class="hero-pill">⟳ Car Rental — tentative, unpaid</div>
     <div class="hero-pill">⟳ UK ETA — needed</div>
     <div class="hero-pill" style="background:rgba(31,82,168,0.15);border-color:rgba(31,82,168,0.3);color:#5b9bd5">⚽ Brentford vs Chelsea — Fri 18 Sep 20:00 (date TBC)</div>
@@ -574,6 +575,29 @@
       </div>
     </div>
 
+    <!-- Stoupa Airbnb (Booked/Tentative) -->
+    <div class="booking-card" onclick="toggleCard(this)">
+      <div class="booking-card-header">
+        <div class="booking-icon" style="background:#eaf3de;">🌊</div>
+        <div class="meta">
+          <div class="title">Stoupa Airbnb — Mani Peninsula</div>
+          <div class="subtitle">Stoupa, Peloponnese · 24–26 Sep · 2 nights &nbsp;·&nbsp; AUD 583.18 &nbsp;·&nbsp; via Airbnb</div>
+        </div>
+        <div class="status-badge status-tentative">Tentative</div>
+      </div>
+      <div class="booking-card-body">
+        <div class="detail-row"><div class="detail-label">Booked via</div><div class="detail-value">Airbnb</div></div>
+        <div class="detail-row"><div class="detail-label">Location</div><div class="detail-value">Stoupa 240 24, Greece &nbsp;<a href="https://maps.google.com/?q=Stoupa+240+24+Greece" target="_blank" style="color:var(--london)">📍 Map</a></div></div>
+        <div class="detail-row"><div class="detail-label">Check-in</div><div class="detail-value">Thu 24 Sep after 14:00</div></div>
+        <div class="detail-row"><div class="detail-label">Check-out</div><div class="detail-value">Sat 26 Sep by 11:00</div></div>
+        <div class="detail-row"><div class="detail-label">Guests</div><div class="detail-value">3 adults, 2 children · max 5 guests</div></div>
+        <div class="detail-row"><div class="detail-label">Total</div><div class="detail-value"><span class="amount">AUD 583.18</span></div></div>
+        <div class="detail-row"><div class="detail-label">Payment</div><div class="detail-value">Mastercard · scheduled auto-charge 2 Sep 2026</div></div>
+        <div class="detail-row"><div class="detail-label">Free cancellation</div><div class="detail-value" style="color:var(--done)">Before 14:00 on 10 Sep · Partial refund before 17 Sep</div></div>
+        <div class="detail-row"><div class="detail-label">⚠ Safety note</div><div class="detail-value" style="color:var(--todo)">Carbon monoxide detector not reported by host — bring a portable detector</div></div>
+      </div>
+    </div>
+
     <!-- Limeni Placeholder -->
     <div class="booking-card" onclick="toggleCard(this)">
       <div class="booking-card-header">
@@ -749,11 +773,12 @@
       <div class="tl-card">
         <div class="tl-card-header">
           <div class="tl-date">Thu 24 – Fri 25 Sep</div>
-          <div class="tl-title">Peloponnese Road Trip · Stoupa Beach &amp; Mani Coast</div>
+          <div class="tl-title">Peloponnese Road Trip · Stoupa Beach &amp; Mani Coast 🌊</div>
           <div class="tl-badge badge-athens">Peloponnese</div>
         </div>
         <div class="tl-card-body">
-          Drive from Chalandri to Stoupa (~3h 30m). Relax on Kalogria/Stoupa beach, explore coastal coves, and enjoy fish tavernas.
+          <strong>🏨 Stoupa Airbnb Stay (2 nights, 24–26 Sep — Tentative/Booked)</strong><br><br>
+          Drive from Chalandri to Stoupa (~3h 30m). Check into Stoupa Airbnb, relax on Kalogria/Stoupa beach, explore coastal coves, and enjoy seafront fish tavernas.
         </div>
       </div>
     </div>
@@ -768,7 +793,7 @@
         </div>
         <div class="tl-card-body">
           <strong>🏠 2-Night Limeni Accommodation Stay (Placeholder — not booked in advance)</strong><br><br>
-          Use Limeni/Areopoli as a picturesque base to explore the Mani area:<br>
+          Checkout Stoupa 11:00 → drive down to Limeni as a picturesque base to explore the Mani area:<br>
           · <strong>Diros Caves:</strong> Underground lake boat tour (~45 min away).<br>
           · <strong>Monemvasia Day Trip:</strong> Explore the Byzantine medieval fortress town on the rock.<br>
           · Return to Chalandri on Monday 28 Sep.
@@ -855,6 +880,15 @@
   <!-- TO DO -->
   <div class="section-label">Remaining to-dos</div>
   <div class="todo-list">
+
+    <div class="todo-item" onclick="toggleTodo(this)">
+      <div class="todo-checkbox"></div>
+      <div class="todo-content">
+        <div class="todo-title">🌊 Stoupa Airbnb (Mani) — Mastercard auto-charge 2 Sep</div>
+        <div class="todo-desc">AUD 583.18 · 2 nights 24–26 Sep · Free cancellation before 10 Sep · Bring portable CO detector</div>
+      </div>
+      <div class="todo-priority priority-soon">By 2 Sep</div>
+    </div>
 
     <div class="todo-item" onclick="toggleTodo(this)">
       <div class="todo-checkbox"></div>
