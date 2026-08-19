@@ -107,6 +107,34 @@
     padding-left: 4px;
   }
 
+
+  /* COLLAPSIBLE SECTIONS */
+  .section-label[onclick] {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 4px;
+  }
+  .section-label::after {
+    content: '▲';
+    font-size: 9px;
+    color: var(--ink-soft);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .section-label.collapsed::after {
+    content: '▼';
+  }
+  .section-body {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .section-body.collapsed {
+    display: none;
+  }
+
   /* BOOKING CARDS */
   .booking-grid {
     display: grid;
@@ -403,8 +431,8 @@
   </div>
 
   <!-- WELLBEING -->
-  <div class="section-label">🩺 &nbsp;Travel Wellbeing</div>
-  <div class="booking-grid">
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-wellbeing">🩺 &nbsp;Travel Wellbeing</div>
+  <div class="section-body collapsed" id="body-wellbeing"><div class="booking-grid">
     <div class="booking-card" onclick="toggleCard(this)">
       <div class="booking-card-header">
         <div class="booking-icon" style="background:#eef2fb;">🩺</div>
@@ -455,10 +483,12 @@
       </div>
     </div>
   </div>
+  </div></div>
+
 
   <!-- FLIGHTS -->
-  <div class="section-label">✈️ &nbsp;Flights</div>
-  <div class="booking-grid">
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-flights">✈️ &nbsp;Flights</div>
+  <div class="section-body collapsed" id="body-flights"><div class="booking-grid">
 
     <!-- Emirates -->
     <div class="booking-card" onclick="toggleCard(this)">
@@ -567,10 +597,12 @@
     </div>
 
   </div>
+  </div></div>
+
 
   <!-- ACCOMMODATION -->
-  <div class="section-label">🏨 &nbsp;Accommodation</div>
-  <div class="booking-grid">
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-accomm">🏨 &nbsp;Accommodation</div>
+  <div class="section-body collapsed" id="body-accomm"><div class="booking-grid">
 
     <!-- London -->
     <div class="booking-card" onclick="toggleCard(this)">
@@ -621,8 +653,6 @@
       </div>
     </div>
 
-  </div>
-
     <div class="booking-card" onclick="toggleCard(this)">
       <div class="booking-card-header">
         <div class="booking-icon" style="background:#eaf3de;">🌊</div>
@@ -645,8 +675,6 @@
         <div class="detail-row"><div class="detail-label">📋 Spreadsheet</div><div class="detail-value" style="font-family:monospace;font-size:12px">2 Sep 2026 | Airbnb | Accommodation Stoupa | AUD 583.18 | Mastercard auto-charge</div></div>
       </div>
     </div>
-
-  </div>
 
     <div class="booking-card" onclick="toggleCard(this)">
       <div class="booking-card-header">
@@ -702,10 +730,11 @@
     </div>
 
   </div>
+  </div></div>
 
   <!-- CAR RENTAL -->
-  <div class="section-label">🚗 &nbsp;Car Rental</div>
-  <div class="booking-grid">
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-car">🚗 &nbsp;Car Rental</div>
+  <div class="section-body collapsed" id="body-car"><div class="booking-grid">
     <div class="booking-card" onclick="toggleCard(this)">
       <div class="booking-card-header">
         <div class="booking-icon" style="background:#e6f4ed;">🚗</div>
@@ -722,18 +751,18 @@
         <div class="detail-row"><div class="detail-label">Rental period</div><div class="detail-value">17 days</div></div>
         <div class="detail-row"><div class="detail-label">Mileage</div><div class="detail-value">Unlimited (free kilometres)</div></div>
         <div class="detail-row"><div class="detail-label">Total charge</div><div class="detail-value"><span class="amount">AUD ~1,320</span> (€800)</div></div>
-        <div class="detail-row"><div class="detail-label">Deposit paid</div><div class="detail-value" style="color:var(--done)">AUD ~330 (€200) paid ✓</div></div>
+        <div class="detail-row"><div class="detail-label">Deposit paid</div><div class="detail-value" style="color:var(--done)">✓ AUD ~330 (€200) paid · confirmed</div></div>
         <div class="detail-row"><div class="detail-label">Balance due</div><div class="detail-value" style="color:var(--todo)">⚠ AUD ~990 (€600) — <strong>cash on pickup</strong> at ATH</div></div>
         <div class="detail-row"><div class="detail-label">Insurance hold</div><div class="detail-value">AUD ~1,155 (€700) — Super Insurance excess hold on card at pickup · inc. ferry pass</div></div>
         <div class="detail-row"><div class="detail-label">Excess covered</div><div class="detail-value">€700 excess fully covered by Super Insurance selection</div></div>
         <div class="detail-row"><div class="detail-label">Parking</div><div class="detail-value">✓ Marousi apartment — confirm parking availability with host Dionisios</div></div>
       </div>
     </div>
-  </div>
+  </div></div>
 
   <!-- INSURANCE -->
-  <div class="section-label">🛡️ &nbsp;Travel Insurance</div>
-  <div class="booking-grid">
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-insurance">🛡️ &nbsp;Travel Insurance</div>
+  <div class="section-body collapsed" id="body-insurance"><div class="booking-grid">
     <div class="booking-card" onclick="toggleCard(this)">
       <div class="booking-card-header">
         <div class="booking-icon" style="background:#e6f4ed;">🛡️</div>
@@ -757,6 +786,8 @@
     </div>
   </div>
 
+
+  </div></div>
 
 
   <!-- ITINERARY -->
@@ -908,11 +939,25 @@
           <div class="tl-badge badge-athens">Athens</div>
         </div>
         <div class="tl-card-body">
-          Acropolis &amp; Acropolis Museum (book timed entry in advance), Monastiraki flea market, Plaka neighbourhood, Syntagma. Rooftop bars and tavernas everywhere. Great base in Chalandri — close to Halandri/Vrilissia family, ~20 min drive to central Athens.<br><br>
+          Acropolis &amp; Acropolis Museum (book timed entry in advance), Monastiraki flea market, Plaka neighbourhood, Syntagma. Rooftop bars and tavernas everywhere. Great base in Marousi — close to Halandri/Vrilissia family, ~20 min drive to central Athens.<br><br>
           <strong>⚽🏀 Athens sports — research findings:</strong><br>
           <strong>Basketball:</strong> EuroLeague 2026-27 format is confirmed but the exact September fixture list hasn't been published yet (typically released closer to the season). Panathinaikos and Olympiacos both play at home in Athens regularly during this period — worth checking <a href="https://www.paobc.gr/en/schedule/" target="_blank" style="color:var(--london)">paobc.gr/schedule</a> and <a href="https://www.olympiacosbc.gr/en/games/euroleague/schedule.html" target="_blank" style="color:var(--london)">olympiacosbc.gr</a> again closer to your trip — last season's opening round fell exactly in this 30 Sep–1 Oct window, so there's a good chance of a home game during your stay.<br><br>
-          <strong>Football:</strong> Super League Greece 2026-27 season is underway (started 22 Aug 2026) with Panathinaikos and AEK Athens both based in Athens. Exact September fixture dates need a closer check at <a href="https://www.slgr.gr/en/schedule/" target="_blank" style="color:var(--london)">slgr.gr/schedule</a> nearer your travel dates, since the detailed round-by-round schedule wasn't locked in far enough ahead to confirm specific dates now.<br><br>
-          <strong>Recommended:</strong> Re-check both links 2–3 weeks before departure once fixtures are locked in — Athens basketball atmosphere (especially Panathinaikos/Olympiacos derby if it falls in window) is genuinely one of the best sporting experiences in Europe.
+          <strong>Football:</strong> Super League Greece 2026-27 season is underway (started 22 Aug 2026) with Panathinaikos and AEK Athens both based in Athens. Exact September fixture dates need a closer check at <a href="https://www.slgr.gr/en/schedule/" target="_blank" style="color:var(--london)">slgr.gr/schedule</a> nearer your travel dates.<br><br>
+          <strong>Recommended:</strong> Re-check both links 2–3 weeks before departure once fixtures are locked in — Athens basketball atmosphere (especially Panathinaikos/Olympiacos derby if it falls in window) is genuinely one of the best sporting experiences in Europe.<br><br>
+
+          <strong>⚽ Football activities for the boys — training &amp; experience:</strong><br><br>
+
+          <strong>1. Paradise Football Park</strong> &nbsp;<a href="https://football.paradisepark.gr/" target="_blank" style="color:var(--london)">🌐 paradisepark.gr</a><br>
+          <cite index="2-1">Modern UEFA-standard mini football facility in Athens with five pitches — runs independent tournaments, corporate tournaments, friendly matches and a Football Academy for kids aged 4–17.</cite> The boys could book a casual pitch session (5x5 or 6x6) or look into whether the academy runs any visitor/trial sessions during September. Great for a competitive kickabout in a proper Greek football environment.<br><br>
+
+          <strong>2. Panathinaikos Soccer Schools — Academy visit</strong> &nbsp;<a href="https://www.pao.gr/en/academy/soccer-schools/" target="_blank" style="color:var(--london)">🌐 pao.gr/academy</a><br>
+          <cite index="5-1">Panathinaikos Soccer Schools runs a network of accredited schools across Greece offering a comprehensive training program, football and educational activities, and visits to Apostolos Nicolaidis Stadium to watch Panathinaikos matches.</cite> Worth contacting them to ask whether visiting kids can observe a training session or participate in an academy day. Their training centre is at Koropi (suburb of Athens) — <cite index="7-1">G. Kalafatis Training Centre, Elaias St., Bourboutsana, Koropi. Tel: 210-6647163.</cite><br><br>
+
+          <strong>3. Watch a Super League live match</strong><br>
+          <cite index="8-1">Panathinaikos play all home matches at the Athens Olympic Stadium in the 2026-27 season.</cite> <cite index="8-1">The Super League season started 22 August 2026.</cite> A live Panathinaikos home match during your stay would be a great experience for the boys — Greek football atmosphere is passionate and raw. Check <a href="https://www.slgr.gr/en/schedule/" target="_blank" style="color:var(--london)">slgr.gr</a> for fixtures during 22 Sep–8 Oct.<br><br>
+
+          <strong>4. Kickabout options</strong><br>
+          Marousi has several local football pitches and sports parks. Ask Dionisios for the nearest 5-a-side pitch — most Greek neighbourhoods have them and they're cheap to hire by the hour. Great for an evening session with the family.
         </div>
       </div>
     </div>
@@ -1174,6 +1219,12 @@
   </div>
 
 <script>
+  function toggleSection(label) {
+    const bodyId = label.id.replace('sec-', 'body-');
+    const body = document.getElementById(bodyId);
+    label.classList.toggle('collapsed');
+    if (body) body.classList.toggle('collapsed');
+  }
   function toggleCard(card) {
     const body = card.querySelector('.booking-card-body');
     body.classList.toggle('open');
