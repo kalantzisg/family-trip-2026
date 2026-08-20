@@ -109,30 +109,32 @@
 
 
   /* COLLAPSIBLE SECTIONS */
+  .section-label.collapsed,
   .section-label[onclick] {
     cursor: pointer;
     user-select: none;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 8px;
     padding-right: 4px;
+    text-align: left;
   }
-  .section-label::after {
+  .section-label[onclick]::after {
     content: '▲';
     font-size: 9px;
     color: var(--ink-soft);
-    transition: transform 0.2s;
     flex-shrink: 0;
+    margin-left: auto;
   }
   .section-label.collapsed::after {
     content: '▼';
   }
   .section-body {
     overflow: hidden;
-    transition: max-height 0.3s ease;
   }
   .section-body.collapsed {
-    display: none;
+    display: none !important;
   }
 
   /* BOOKING CARDS */
@@ -406,7 +408,7 @@
     <div class="hero-pill">⟳ Xylokastro &amp; Lefkada — Placeholders (2–6 Oct, unbooked)</div>
     <div class="hero-pill done">✓ Car Rental — booked · €600 cash on pickup</div>
     <div class="hero-pill done">✓ UK ETA — approved for all</div>
-    <div class="hero-pill" style="background:rgba(31,82,168,0.15);border-color:rgba(31,82,168,0.3);color:#5b9bd5">⚽ Brentford vs Chelsea — Fri 18 Sep 20:00 (date TBC)</div>
+    <div class="hero-pill" style="background:rgba(150,150,150,0.1);border-color:rgba(150,150,150,0.2);color:#aaa"><s>⚽ Brentford vs Chelsea</s> — not attending</div>
   </div>
 </div>
 
@@ -784,9 +786,6 @@
         <div class="detail-row"><div class="detail-label">Note</div><div class="detail-value">Keep policy number and emergency contact handy while travelling</div></div>
       </div>
     </div>
-  </div>
-
-
   </div></div>
 
 
@@ -834,7 +833,7 @@
       <div class="tl-card">
         <div class="tl-card-header">
           <div class="tl-date">Fri 18 Sep</div>
-          <div class="tl-title">Brentford vs Chelsea ⚽ <span style="font-size:11px;font-weight:400;color:#888">— 20:00 BST (or Sat 19 Sep 20:00 — TBC)</span></div>
+          <div class="tl-title"><s>Brentford vs Chelsea ⚽</s> <span style="font-size:11px;font-weight:400;color:#888">— not attending · see options below</span></div>
           <div class="tl-badge" style="background:#fff0e6;color:#b35a00">Tentative — quote received</div>
         </div>
         <div class="tl-card-body">
@@ -1104,8 +1103,6 @@
   <!-- TO DO -->
   <div class="section-label">Remaining to-dos</div>
   <div class="todo-list">
-      <div class="todo-priority priority-urgent">Call today</div>
-    </div>
 
     <div class="todo-item done-item" onclick="toggleTodo(this)">
       <div class="todo-checkbox">✓</div>
@@ -1116,107 +1113,14 @@
       <div class="todo-priority priority-when">Done</div>
     </div>
 
-    <div class="todo-item" onclick="toggleTodo(this)">
-      <div class="todo-checkbox"></div>
+    <div class="todo-item done-item" onclick="toggleTodo(this)">
+      <div class="todo-checkbox">✓</div>
       <div class="todo-content">
-        <div class="todo-title">🚗 Car rental — pay deposit &amp; send flight details by 22 Aug</div>
-        <div class="todo-desc">AUD ~500 deposit (€300) due ~22 Aug. Flight details to send: EK409 MEL→LGW dep 05:15 17 Sep · A3601 LHR→ATH arr 17:55 22 Sep · EK104 ATH dep 23:10 8 Oct</div>
+        <div class="todo-title">🚗 Car rental deposit paid ✓ · €600 cash + €700 hold on pickup</div>
+        <div class="todo-desc">€200 deposit paid · €600 balance cash on pickup at ATH · €700 Super Insurance hold on card</div>
       </div>
-      <div class="todo-priority priority-urgent">By 22 Aug</div>
+      <div class="todo-priority priority-when">Done</div>
     </div>
-
-    <div class="todo-item" onclick="toggleTodo(this)">
-      <div class="todo-checkbox"></div>
-      <div class="todo-content">
-        <div class="todo-title">🏡 Stoupa Airbnb — confirm Mastercard funds on 2 Sep (AUD 583.18)</div>
-        <div class="todo-desc">Auto-charge on 2 Sep 2026 · Free cancellation before 10 Sep · ⚠ Bring portable CO detector (not reported by host)</div>
-      </div>
-      <div class="todo-priority priority-soon">By 2 Sep</div>
-    </div>
-
-    <div class="todo-item" onclick="toggleTodo(this)">
-      <div class="todo-checkbox"></div>
-      <div class="todo-content">
-        <div class="todo-title">🏡 Marousi Airbnb — ensure Mastercard has funds on 13 Sep</div>
-        <div class="todo-desc">AUD 4,850.42 · Mastercard auto-charge 13 Sep 2026 · 16 nights 22 Sep–8 Oct · ⚠ Bring portable smoke/CO detector (not reported by host)</div>
-        <div class="todo-desc">Auto-charge on 9 Sep 2026 via Google Pay · 16 nights 22 Sep–8 Oct</div>
-      </div>
-      <div class="todo-priority priority-soon">By 9 Sep</div>
-    </div>
-
-    <div class="todo-item" onclick="toggleTodo(this)">
-      <div class="todo-checkbox"></div>
-      <div class="todo-content">
-        <div class="todo-title">🏡 Marlin London — confirm Mastercard funds on 14 Sep (AUD ~4,310)</div>
-        <div class="todo-desc">Auto-charge on 14 Sep 2026 via Mastercard · 5 nights 17–22 Sep</div>
-      </div>
-      <div class="todo-priority priority-soon">By 14 Sep</div>
-    </div>
-
-    <div class="todo-item" onclick="toggleTodo(this)">
-      <div class="todo-checkbox"></div>
-      <div class="todo-content">
-        <div class="todo-title">⚽ Brentford vs Chelsea — book tickets</div>
-        <div class="todo-desc">Fri 18 Sep 20:00 BST (or Sat 19 Sep if fixture moves). Quote: AUD 5,218.47 via Football Ticket Net. Check Brentford official site and Chelsea away allocation first for better price</div>
-      </div>
-      <div class="todo-priority priority-urgent">Book soon</div>
-    </div>
-
-    <div class="todo-item" onclick="toggleTodo(this)">
-      <div class="todo-checkbox"></div>
-      <div class="todo-content">
-        <div class="todo-title">🎁 Wedding gift — sort before departure</div>
-        <div class="todo-desc">Wedding is Thu 1 Oct. Consider sourcing locally in Athens or bringing from Australia. Decide and prepare before 17 Sep</div>
-      </div>
-      <div class="todo-priority priority-soon">Before departure</div>
-    </div>
-
-    <div class="todo-item" onclick="toggleTodo(this)">
-      <div class="todo-checkbox"></div>
-      <div class="todo-content">
-        <div class="todo-title">🎵 Set Songkick/Bandsintown alerts — Little Simz, Jungle, Tom Misch, SAULT, Cleo Sol, Tems, Dave, Burna Boy</div>
-        <div class="todo-desc">None confirmed for London 17–21 Sep. Also watch bluenotelondon.com for any soft-open preview shows 19–21 Sep</div>
-      </div>
-      <div class="todo-priority priority-when">Set alerts now</div>
-    </div>
-
-    <div class="todo-item" onclick="toggleTodo(this)">
-      <div class="todo-checkbox"></div>
-      <div class="todo-content">
-        <div class="todo-title">🏀⚽ Re-check Athens basketball/football fixtures closer to departure</div>
-        <div class="todo-desc">Check paobc.gr, olympiacosbc.gr (Euroleague basketball) and slgr.gr (Super League football) 2–3 weeks before departure for fixtures during your stay</div>
-      </div>
-      <div class="todo-priority priority-when">Check closer to date</div>
-    </div>
-
-    <div class="todo-item" onclick="toggleTodo(this)">
-      <div class="todo-checkbox"></div>
-      <div class="todo-content">
-        <div class="todo-title">📱 Download Citymapper app before London</div>
-        <div class="todo-desc">Best app for London transport — real-time Tube, Elizabeth line, buses, walking, Uber all in one. Set home as Marlin Apartments, London Bridge. Free. iOS and Android.</div>
-      </div>
-      <div class="todo-priority priority-soon">Before 17 Sep</div>
-    </div>
-
-    <div class="todo-item" onclick="toggleTodo(this)">
-      <div class="todo-checkbox"></div>
-      <div class="todo-content">
-        <div class="todo-title">📱 Pre-book Uber XL for Tue 22 Sep — London Bridge to Heathrow</div>
-        <div class="todo-desc">Book the night before (21 Sep). Pickup 08:45 from the apartment. Uber XL or Exec — avoid luggage haul through the Tube with 5 people</div>
-      </div>
-      <div class="todo-priority priority-when">Night before departure</div>
-    </div>
-
-    <div class="todo-item" onclick="toggleTodo(this)">
-      <div class="todo-checkbox"></div>
-      <div class="todo-content">
-        <div class="todo-title">💬 Message Chalandri host re: late checkout on 8 Oct (checkout 10:00, flight 23:10)</div>
-        <div class="todo-desc">Ask about late checkout or luggage storage for the 13-hour gap between checkout and departure. Message via Airbnb.</div>
-      </div>
-      <div class="todo-priority priority-when">Before arrival</div>
-    </div>
-
-  </div>
 
 <script>
   function toggleSection(label) {
