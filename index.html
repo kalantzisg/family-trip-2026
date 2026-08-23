@@ -117,6 +117,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 8px;
+    padding-left: 4px;
     padding-right: 4px;
     text-align: left;
   }
@@ -404,11 +405,11 @@
     <div class="hero-pill done">✓ Accommodation — London (Marlin) booked, pays 14 Sep</div>
     <div class="hero-pill done">✓ Accommodation — Athens (Marousi) booked</div>
     <div class="hero-pill done">✓ Accommodation — Stoupa (Mani) booked</div>
-    <div class="hero-pill">⟳ Limeni Accommodation — Placeholder (26–28 Sep)</div>
-    <div class="hero-pill">⟳ Xylokastro &amp; Lefkada — Placeholders (2–6 Oct, unbooked)</div>
+    <div class="hero-pill">⟳ Accommodation — Xylokastro (Hotel Kyani Akti) booked · payment on arrival</div>
+    <div class="hero-pill">⟳ Lefkada — Placeholder (post-wedding, unbooked)</div>
     <div class="hero-pill done">✓ Car Rental — booked · €600 cash on pickup</div>
     <div class="hero-pill done">✓ UK ETA — approved for all</div>
-    <div class="hero-pill" style="background:rgba(150,150,150,0.1);border-color:rgba(150,150,150,0.2);color:#aaa"><s>⚽ Brentford vs Chelsea</s> — not attending</div>
+    <div class="hero-pill" style="background:rgba(31,82,168,0.15);border-color:rgba(31,82,168,0.3);color:#5b9bd5">⚽ Match TBD — Brentford/Chelsea or Spurs/Villa · investigating</div>
   </div>
 </div>
 
@@ -489,7 +490,7 @@
 
 
   <!-- FLIGHTS -->
-  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-flights">✈️ &nbsp;Flights</div>
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-flights">✈️ &nbsp;FLIGHTS</div>
   <div class="section-body collapsed" id="body-flights"><div class="booking-grid">
 
     <!-- Emirates -->
@@ -603,7 +604,7 @@
 
 
   <!-- ACCOMMODATION -->
-  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-accomm">🏨 &nbsp;Accommodation</div>
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-accomm">🏨 &nbsp;ACCOMMODATION</div>
   <div class="section-body collapsed" id="body-accomm"><div class="booking-grid">
 
     <!-- London -->
@@ -677,65 +678,15 @@
         <div class="detail-row"><div class="detail-label">📋 Spreadsheet</div><div class="detail-value" style="font-family:monospace;font-size:12px">2 Sep 2026 | Airbnb | Accommodation Stoupa | AUD 583.18 | Mastercard auto-charge</div></div>
       </div>
     </div>
-
-    <div class="booking-card" onclick="toggleCard(this)">
-      <div class="booking-card-header">
-        <div class="booking-icon" style="background:#f0e8d5;">🏰</div>
-        <div class="meta">
-          <div class="title">Limeni / Mani Accommodation — Placeholder</div>
-          <div class="subtitle">Limeni, Peloponnese · 26–28 Sep · 2 nights · Not booked in advance</div>
-        </div>
-        <div class="status-badge status-tentative">Placeholder</div>
-      </div>
-      <div class="booking-card-body">
-        <div class="detail-row"><div class="detail-label">Status</div><div class="detail-value">Not booked in advance — will be decided/booked spontaneously or on short notice while travelling</div></div>
-        <div class="detail-row"><div class="detail-label">Dates</div><div class="detail-value">Sat 26 Sep – Mon 28 Sep · 2 nights</div></div>
-        <div class="detail-row"><div class="detail-label">Purpose</div><div class="detail-value">Base for exploring Limeni's coastal stone towers, Diros Caves, and day-tripping to Monemvasia rock fortress</div></div>
-        <div class="detail-row"><div class="detail-label">Luggage</div><div class="detail-value">Drive with overnight bags only — main luggage stays safe at Marousi home base</div></div>
-        <div class="detail-row"><div class="detail-label">Search on</div><div class="detail-value">Booking.com or Airbnb · Areopoli and Limeni village have good small guesthouses and apartments</div></div>
-      </div>
     </div>
-
-    <div class="booking-card" onclick="toggleCard(this)">
-      <div class="booking-card-header">
-        <div class="booking-icon" style="background:#e8f0f9;">🌲</div>
-        <div class="meta">
-          <div class="title">Xylokastro Coastal Stay — Placeholder</div>
-          <div class="subtitle">Xylokastro, Peloponnese · 2–4 Oct · 2 nights · Not booked in advance</div>
-        </div>
-        <div class="status-badge status-tentative">Placeholder</div>
-      </div>
-      <div class="booking-card-body">
-        <div class="detail-row"><div class="detail-label">Status</div><div class="detail-value">Not booked in advance — spontaneous post-wedding coastal stop</div></div>
-        <div class="detail-row"><div class="detail-label">Dates</div><div class="detail-value">Fri 2 Oct – Sun 4 Oct · 2 nights</div></div>
-        <div class="detail-row"><div class="detail-label">Purpose</div><div class="detail-value">Visit family friends in Xylokastro, enjoy Gulf of Corinth pine forest coastline, decompress post-wedding</div></div>
-        <div class="detail-row"><div class="detail-label">Location</div><div class="detail-value">Xylokastro, Gulf of Corinth &nbsp;<a href="https://maps.google.com/?q=Xylokastro+Greece" target="_blank" style="color:var(--london)">📍 Map</a> · Blue Flag beaches, pine forest, calm gulf waters</div></div>
-      </div>
     </div>
-
-    <div class="booking-card" onclick="toggleCard(this)">
-      <div class="booking-card-header">
-        <div class="booking-icon" style="background:#faeee9;">🌊</div>
-        <div class="meta">
-          <div class="title">Lefkada Island Stay — Placeholder</div>
-          <div class="subtitle">Vassiliki, Lefkada · 4–6 Oct · 2 nights · Not booked in advance</div>
-        </div>
-        <div class="status-badge status-tentative">Placeholder</div>
-      </div>
-      <div class="booking-card-body">
-        <div class="detail-row"><div class="detail-label">Status</div><div class="detail-value">Not booked in advance — flexible Ionian island beach trip post-Xylokastro</div></div>
-        <div class="detail-row"><div class="detail-label">Dates</div><div class="detail-value">Sun 4 Oct – Tue 6 Oct · 2 nights</div></div>
-        <div class="detail-row"><div class="detail-label">Purpose</div><div class="detail-value">Relaxed beach days in Vassiliki / Mikros Gialos before returning to Athens for departure</div></div>
-        <div class="detail-row"><div class="detail-label">Options</div><div class="detail-value">Elisso Hotel (9.2, right on beach) · Cosmos Vassiliki (sea view, connected family rooms) · Odeon Hotel (private beach, free canoes &amp; bikes)</div></div>
-        <div class="detail-row"><div class="detail-label">Getting there</div><div class="detail-value">~2.5h drive from Xylokastro via Rio-Antirio bridge — no ferry needed, Lefkada connects via floating bridge</div></div>
-      </div>
     </div>
 
   </div>
   </div></div>
 
   <!-- CAR RENTAL -->
-  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-car">🚗 &nbsp;Car Rental</div>
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-car">🚗 &nbsp;CAR RENTAL</div>
   <div class="section-body collapsed" id="body-car"><div class="booking-grid">
     <div class="booking-card" onclick="toggleCard(this)">
       <div class="booking-card-header">
@@ -763,7 +714,7 @@
   </div></div>
 
   <!-- INSURANCE -->
-  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-insurance">🛡️ &nbsp;Travel Insurance</div>
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-insurance">🛡️ &nbsp;TRAVEL INSURANCE</div>
   <div class="section-body collapsed" id="body-insurance"><div class="booking-grid">
     <div class="booking-card" onclick="toggleCard(this)">
       <div class="booking-card-header">
@@ -790,8 +741,8 @@
 
 
   <!-- ITINERARY -->
-  <div class="section-label">Day by day</div>
-  <div class="timeline">
+  <div class="section-label" onclick="toggleSection(this)" id="sec-itinerary">📅 &nbsp;DAY BY DAY</div>
+  <div class="section-body" id="body-itinerary"><div class="timeline">
 
     <div class="tl-item flight-item" onclick="toggleTL(this)">
       <div class="tl-dot"></div>
@@ -832,21 +783,45 @@
       <div class="tl-dot"></div>
       <div class="tl-card">
         <div class="tl-card-header">
-          <div class="tl-date">Fri 18 Sep</div>
-          <div class="tl-title"><s>Brentford vs Chelsea ⚽</s> <span style="font-size:11px;font-weight:400;color:#888">— not attending · see options below</span></div>
-          <div class="tl-badge" style="background:#fff0e6;color:#b35a00">Tentative — quote received</div>
+          <div class="tl-date">Fri 18 – Sun 20 Sep</div>
+          <div class="tl-title">⚽ Premier League match — deciding between two options</div>
+          <div class="tl-badge" style="background:#fff0e6;color:#b35a00">Investigating</div>
         </div>
         <div class="tl-card-body">
-          <strong>⚠ Fixture date — check before booking:</strong><br>
-          Listed as <strong>Friday 18 Sep at 20:00 BST</strong> — works perfectly (arrive Thursday, recover Friday, match that evening). May move to Saturday 19 Sep 20:00 if either club reaches the EFL Cup third round and draws a Champions League club. Confirm closer to the date.<br><br>
-          <strong>🏟 Gtech Community Stadium, Brentford</strong> &nbsp;<a href="https://maps.google.com/?q=Gtech+Community+Stadium+Brentford" target="_blank" style="color:var(--london)">📍 Map</a> &nbsp;· ~30 min from London Bridge<br><br>
-          <strong>Other options if Chelsea fixture moves:</strong><br>
-          · Spurs vs Aston Villa — Sat 19 Sep 12:30 (Tottenham Hotspur Stadium)<br>
-          · Fulham vs Man Utd — Sun 20 Sep 16:30 (Craven Cottage)<br><br>
-          <strong>🎟 Quote — Football Ticket Net (resale)</strong><br>
-          5× Away Section (Chelsea fans), up to 2 seats together per booking:<br>
-          · AUD 3,823.05 subtotal (AUD 764.61/ticket) + AUD 1,376.30 booking fee + AUD 19.12 service fee<br>
-          · <strong>Total: AUD 5,218.47</strong> (~36% in fees — check Brentford official site and Chelsea away allocation first for better price)
+
+          <strong>OPTION A: <s>Brentford vs Chelsea</s> — Fri 18 Sep 20:00 BST · Gtech Community Stadium</strong> &nbsp;<a href="https://maps.google.com/?q=Gtech+Community+Stadium+Brentford" target="_blank" style="color:var(--london)">📍 Map</a><br>
+          General admission ruled out (requires 100+ TAPS membership). Options remaining:<br>
+          · <strong>Vivid Seats</strong> &nbsp;<a href="https://www.vividseats.com/brentford-fc-tickets--sports-soccer/performer/67011" target="_blank" style="color:var(--london)">vividseats.com</a> — 100% Buyer Guarantee, All-In Pricing<br>
+          · <strong>Football Ticket Net</strong> — quote: AUD 5,218.47 for 5 (Away Section, ~36% in fees)<br>
+          · <strong>Brentford Hospitality via Alfie</strong> — Legends Loge £1,750pp (~AUD 17,200 total) · Golf Rooms + ticket £375pp (~AUD 3,690 total)<br>
+          ⚠ May move to Sat 19 Sep 20:00 if EFL Cup clash — confirm before purchasing<br><br>
+
+          <strong>OPTION B: Spurs vs Aston Villa — Sat 19 Sep 12:30 · Tottenham Hotspur Stadium</strong> &nbsp;<a href="https://maps.google.com/?q=Tottenham+Hotspur+Stadium+London" target="_blank" style="color:var(--london)">📍 Map</a><br>
+          Better value options available through official resellers — investigate in this order:<br><br>
+
+          <div style="background:#e6f4ed;border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:8px;">
+          🥇 <strong>P1 Travel (official Spurs reseller)</strong> &nbsp;<a href="https://www.p1travel.com/football/tottenham-hotspur/spurs-v-aston-villa" target="_blank" style="color:var(--london)">p1travel.com</a><br>
+          · Shortside Stadium Tour Package — from £150pp → ~AUD ~1,475 for 5 🟢<br>
+          · Longside Stadium Tour Package — from £171pp → ~AUD ~1,680 for 5 🟢<br>
+          Includes match ticket + stadium tour the day before. Official reseller. Check 5 seats together before booking at starting price.
+          </div>
+
+          <div style="background:#e6f4ed;border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:8px;">
+          🥈 <strong>Champions Travel (official Spurs reseller)</strong> &nbsp;<a href="https://www.champions-travel.com/spurs-v-aston-villa" target="_blank" style="color:var(--london)">champions-travel.com</a><br>
+          · From ~$129 USD pp → treat as starting price only until 5 seats selected together 🟢
+          </div>
+
+          <div style="background:#e6f4ed;border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:8px;">
+          🥉 <strong>Travel Connection via Travelzoo</strong><br>
+          · £167pp → ~AUD ~1,640 for 5 🟢 — worth checking if offer allows 5 together
+          </div>
+
+          <div style="background:#fff8e6;border-radius:8px;padding:10px 14px;font-size:13px;">
+          🔴 <strong>Spurs Stadium Social</strong> — £449pp → ~AUD ~4,415 for 5. Skip unless nothing else guarantees 5 together.
+          </div><br>
+
+          <strong>Recommended approach:</strong> P1 Travel first (5 together, ≤£200pp target) → Champions Travel → Travel Connection → Stadium Social as last resort.<br><br>
+          <strong>Also worth checking:</strong> Fulham vs Man Utd — Sun 20 Sep 16:30 (Craven Cottage) as a third option if neither of the above works out.
         </div>
       </div>
     </div>
@@ -965,8 +940,8 @@
       <div class="tl-dot"></div>
       <div class="tl-card">
         <div class="tl-card-header">
-          <div class="tl-date">Thu 24 – Sun 27 Sep</div>
-          <div class="tl-title">Peloponnisos Road Trip · Stoupa, Mani, Monemvasia 🌊</div>
+          <div class="tl-date">Thu 24 Sep – Mon 28 Sep</div>
+          <div class="tl-title">Peloponnisos Road Trip · Stoupa, Mani &amp; Xylokastro 🌊</div>
           <div class="tl-badge badge-athens">Peloponnese</div>
         </div>
         <div class="tl-card-body">
@@ -993,17 +968,14 @@
           Afternoon: drive south (~25 min) to <strong>Limeni</strong> — idyllic photographed bay, Maniot buildings, stylish restaurants over turquoise water — perfect sunset dinner.<br>
           Optional: push south (~45 min) to <strong>Gerolimenas</strong> — remote fishing village at the bottom of the world, fish tavernas on the water.<br><br>
 
-          <strong>🏰 Day 3 — Sat 26 Sep · Checkout Stoupa → Diros Caves → Monemvasia</strong><br>
-          <em>Checkout by 11:00 · Stoupa → Diros Caves ~45 min · Diros → Monemvasia ~2h · Total driving: ~2h 45m</em><br><br>
-          Bags in the car, check out by 11:00, then:<br>
-          · <strong>Caves of Diros</strong> (~45 min south near Areopoli) — underground lake by boat, one of the most extraordinary sites in Greece. Book ahead online.<br>
-          · Drive east via Areopoli, stop at <strong>Gythio</strong> for lunch on the seafront (~halfway)<br>
-          · <strong>Overnight in Monemvasia</strong> — medieval fortress-town rising from the sea on a single rock connected by a narrow causeway. Cobbled lanes, Byzantine churches, terrace restaurants over the Aegean. Swimming below the kastro walls is possible and memorable.<br><br>
+          <strong>🌊 Day 3 — Sat 26 Sep · Checkout Stoupa → Xylokastron (Hotel Kyani Akti)</strong><br>
+          <em>Checkout by 11:00 · Stoupa → Xylokastro ~2.5h via Kalamata and Corinth motorway north</em><br><br>
+          Checkout bags in the car by 11:00. Head north — optional stop at <strong>Kardamyli</strong> for a coffee or <strong>Kalamata</strong> seafront for a late lunch en route. Check in at Hotel Kyani Akti from 14:30.<br>
+          Visit Angela, walk the pine-forest Blue Flag beach, Gulf of Corinth sunset. Easy evening after the beach days.<br><br>
 
-          <strong>🏠 Day 4 — Sun 27 Sep · Monemvasia → Chalandri · Wedding prep</strong><br>
-          <em>~3h 30m via Sparta or east coast route</em><br><br>
-          Early morning walk in Monemvasia before the day-trippers arrive — worth the early start. Then head north. Route options: via Sparta (inland, faster, pass Mystras briefly if curious) or via the east coast (more scenic, slower).<br>
-          Stop at the <strong>Corinth Canal</strong> on the way back — 20 min to look down at the extraordinary cut, then back to Marousi. Freshen up, wedding prep, family gatherings in Halandri. Rest up — big day tomorrow.
+          <strong>🏠 Day 4 — Mon 28 Sep · Checkout Xylokastro → Marousi · Wedding prep</strong><br>
+          <em>Checkout by 12:00 · ~1.5h drive via Corinth motorway</em><br><br>
+          Easy drive back to Marousi. Optional stop at the <strong>Corinth Canal</strong> — 20 min to look down at the extraordinary cut — then home. Freshen up, wedding prep, family gatherings in Halandri. <strong>3 days to rest before the wedding on Thu 1 Oct.</strong>
         </div>
       </div>
     </div>
@@ -1043,14 +1015,12 @@
       <div class="tl-card">
         <div class="tl-card-header">
           <div class="tl-date">Fri 2 – Tue 6 Oct</div>
-          <div class="tl-title">Xylokastro &amp; Lefkada coast days 🌊</div>
+          <div class="tl-title">Lefkada coast days — post-wedding 🌊</div>
           <div class="tl-badge badge-athens">Coastal Road Trip</div>
         </div>
         <div class="tl-card-body">
           <strong>🚗 Spontaneous coastal road trip — not booked in advance, decided on the go:</strong><br><br>
-          <strong>Fri 2 – Sun 4 Oct (2 nights) — Xylokastro</strong><br>
-          Visit family friends on the Gulf of Corinth. Pine forest beach walks, Blue Flag beaches, calm gulf waters. Post-wedding decompression.<br><br>
-          <strong>Sun 4 – Tue 6 Oct (2 nights) — Lefkada / Vassiliki</strong><br>
+          <strong>Fri 2 – Tue 6 Oct — Lefkada / Vassiliki</strong><br>
           Drive across Rio-Antirio bridge to Lefkada (~2.5h from Xylokastro) — no ferry needed. Vassiliki for warm autumn swims, beach days, seafront tavernas. Look at: Elisso Hotel (9.2), Cosmos Vassiliki (sea view family rooms), Odeon Hotel (private beach, free canoes &amp; bikes).<br><br>
           <strong>Tue 6 Oct</strong> — Drive back to Marousi (~4h).
         </div>
@@ -1058,10 +1028,9 @@
     </div>
         </div>
         <div class="tl-card-body">
-          <strong>🚗 Drive: Chalandri → (Xylokastro) → Vassiliki, Lefkada</strong><br>
+          <strong>🚗 Drive: Marousi → Vassiliki, Lefkada</strong><br>
           ~360km direct · approximately 4–4.5 hours. Good motorway via Corinth and Rio-Antirio bridge, then across to Lefkada via the floating bridge — no ferry needed.<br><br>
-          <strong>Option: Stop in Xylokastro on the way</strong> — Xylokastro sits right on this route on the Gulf of Corinth, ~1.5h from Chalandri. Worth stopping to visit a family friend here and potentially staying 1–2 nights before continuing to Lefkada. Blue Flag beaches, pine-forest coastline, calm gulf waters — a natural decompression stop post-wedding. Adds 1–2 days before the Vassiliki beach leg.<br><br>
-          <strong>Base: Vassiliki, southern Lefkada — 3 nights</strong><br>
+          <strong>Base: Vassiliki, southern Lefkada</strong><br>
           Lefkada's most picturesque fishing village — perfect for families, shallow warm waters, cafes and restaurants right on the beach. Late September/early October the crowds are gone, the water is still warm, and the pace drops right down. Pick a spot and zone out.<br><br>
         </div>
       </div>
@@ -1098,11 +1067,11 @@
     </div>
     </div>
 
-  </div>
+  </div></div></div>
 
   <!-- TO DO -->
-  <div class="section-label">Remaining to-dos</div>
-  <div class="todo-list">
+  <div class="section-label" onclick="toggleSection(this)" id="sec-todos">☑️ &nbsp;REMAINING TO-DOS</div>
+  <div class="section-body" id="body-todos"><div class="todo-list">
 
     <div class="todo-item done-item" onclick="toggleTodo(this)">
       <div class="todo-checkbox">✓</div>
@@ -1129,6 +1098,8 @@
     label.classList.toggle('collapsed');
     if (body) body.classList.toggle('collapsed');
   }
+  // Sections that start open don't need collapsed class on label — arrow handled via CSS
+  // Sections that start closed already have 'collapsed' on both label and body
   function toggleCard(card) {
     const body = card.querySelector('.booking-card-body');
     body.classList.toggle('open');
@@ -1179,6 +1150,7 @@
   }
   function updatePayments() {
     const el = (id) => document.getElementById(id);
+    if (el('pay-xylokastro')) el('pay-xylokastro').outerHTML = '<span id="pay-xylokastro">' + payLabel(daysUntil('2026-09-26'), 'on-site') + '</span>';
     if (el('pay-marousi'))   el('pay-marousi').outerHTML   = '<span id="pay-marousi">'   + payLabel(daysUntil('2026-09-13'), 'payment') + '</span>';
     if (el('pay-stoupa'))    el('pay-stoupa').outerHTML    = '<span id="pay-stoupa">'    + payLabel(daysUntil('2026-09-02'), 'payment') + '</span>';
     if (el('pay-marlin'))    el('pay-marlin').outerHTML    = '<span id="pay-marlin">'    + payLabel(daysUntil('2026-09-14'), 'payment') + '</span>';
