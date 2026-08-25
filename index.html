@@ -115,21 +115,25 @@
     user-select: none;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 8px;
+    justify-content: space-between;
     padding-left: 4px;
     padding-right: 4px;
     text-align: left;
+    width: 100%;
+    box-sizing: border-box;
   }
   .section-label[onclick]::after {
-    content: '▲';
+    content: '▼';
     font-size: 9px;
     color: var(--ink-soft);
     flex-shrink: 0;
-    margin-left: auto;
+    margin-left: 8px;
   }
   .section-label.collapsed::after {
     content: '▼';
+  }
+  .section-label:not(.collapsed)[onclick]::after {
+    content: '▲';
   }
   .section-body {
     overflow: hidden;
@@ -433,8 +437,98 @@
     </div>
   </div>
 
+  <!-- CALENDAR SUMMARY -->
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-calendar">📅 Calendar Summary</div>
+  <div class="section-body collapsed" id="body-calendar">
+  <div style="margin-bottom:20px;">
+  <style>
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; max-width: 100%; margin: 8px 0; }
+    .cal-hdr { text-align: center; font-size: 10px; font-weight: 700; color: var(--ink-soft); padding: 3px; text-transform: uppercase; }
+    .cal-mth { grid-column: 1 / -1; font-size: 13px; font-weight: 700; margin: 10px 0 4px; border-bottom: 2px solid var(--ink); color: var(--ink); font-family: "DM Serif Display", serif; }
+    .cal-cell { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 3px; min-height: 48px; font-size: 9px; }
+    .cal-cell.off { background: transparent; border: none; }
+    .cal-num { font-weight: 700; font-size: 10px; margin-bottom: 2px; color: var(--ink); }
+    .cal-tag { padding: 1px 3px; border-radius: 3px; font-weight: 600; font-size: 8px; line-height: 1.2; margin-bottom: 1px; display: block; }
+    .cal-flt { background: #e6f3f5; color: #0f5f6e; }
+    .cal-ldn { background: #e8f0f9; color: #1B4F8A; }
+    .cal-ath { background: #faeee9; color: #B5451B; }
+    .cal-plo { background: #e6f4ed; color: #2a7a4b; }
+    .cal-wed { background: #f3eaf9; color: #7B3FA0; border: 1px dashed #7B3FA0; }
+    .cal-pay { background: #fff3cd; color: #856404; }
+  </style>
+
+  <div class="cal-grid">
+    <div class="cal-mth">September 2026</div>
+    <div class="cal-hdr">M</div><div class="cal-hdr">T</div><div class="cal-hdr">W</div><div class="cal-hdr">T</div><div class="cal-hdr">F</div><div class="cal-hdr">S</div><div class="cal-hdr">S</div>
+
+    <div class="cal-cell off"></div>
+    <div class="cal-cell"><div class="cal-num">1</div></div>
+    <div class="cal-cell"><div class="cal-num">2</div><span class="cal-tag cal-pay">💳 Stoupa</span></div>
+    <div class="cal-cell"><div class="cal-num">3</div></div>
+    <div class="cal-cell"><div class="cal-num">4</div></div>
+    <div class="cal-cell"><div class="cal-num">5</div></div>
+    <div class="cal-cell"><div class="cal-num">6</div></div>
+    <div class="cal-cell"><div class="cal-num">7</div></div>
+    <div class="cal-cell"><div class="cal-num">8</div></div>
+    <div class="cal-cell"><div class="cal-num">9</div></div>
+    <div class="cal-cell"><div class="cal-num">10</div></div>
+    <div class="cal-cell"><div class="cal-num">11</div></div>
+    <div class="cal-cell"><div class="cal-num">12</div></div>
+    <div class="cal-cell"><div class="cal-num">13</div><span class="cal-tag cal-pay">💳 Marousi</span></div>
+    <div class="cal-cell"><div class="cal-num">14</div><span class="cal-tag cal-pay">💳 Marlin</span></div>
+    <div class="cal-cell"><div class="cal-num">15</div></div>
+    <div class="cal-cell"><div class="cal-num">16</div></div>
+    <div class="cal-cell"><div class="cal-num">17</div><span class="cal-tag cal-flt">✈️ MEL→LGW</span></div>
+    <div class="cal-cell"><div class="cal-num">18</div><span class="cal-tag cal-ldn">London</span><span class="cal-tag" style="background:#fff0e6;color:#b35a00">⚽ Match?</span></div>
+    <div class="cal-cell"><div class="cal-num">19</div><span class="cal-tag cal-ldn">London</span></div>
+    <div class="cal-cell"><div class="cal-num">20</div><span class="cal-tag cal-ldn">Top Boy</span></div>
+    <div class="cal-cell"><div class="cal-num">21</div><span class="cal-tag cal-ldn">Ted Lasso</span></div>
+    <div class="cal-cell"><div class="cal-num">22</div><span class="cal-tag cal-flt">✈️ LHR→ATH</span><span class="cal-tag cal-ath">Athens</span></div>
+    <div class="cal-cell"><div class="cal-num">23</div><span class="cal-tag cal-ath">Athens</span></div>
+    <div class="cal-cell"><div class="cal-num">24</div><span class="cal-tag cal-plo">→ Stoupa</span></div>
+    <div class="cal-cell"><div class="cal-num">25</div><span class="cal-tag cal-plo">Stoupa 🏖</span></div>
+    <div class="cal-cell"><div class="cal-num">26</div><span class="cal-tag cal-plo">→ Xylo</span></div>
+    <div class="cal-cell"><div class="cal-num">27</div><span class="cal-tag cal-plo">Xylokastro</span></div>
+    <div class="cal-cell"><div class="cal-num">28</div><span class="cal-tag cal-ath">→ Marousi</span></div>
+    <div class="cal-cell"><div class="cal-num">29</div><span class="cal-tag cal-ath">Athens</span></div>
+    <div class="cal-cell"><div class="cal-num">30</div><span class="cal-tag cal-ath">Athens</span></div>
+  </div>
+
+  <div class="cal-grid" style="margin-top:8px;">
+    <div class="cal-mth">October 2026</div>
+    <div class="cal-hdr">M</div><div class="cal-hdr">T</div><div class="cal-hdr">W</div><div class="cal-hdr">T</div><div class="cal-hdr">F</div><div class="cal-hdr">S</div><div class="cal-hdr">S</div>
+
+    <div class="cal-cell off"></div><div class="cal-cell off"></div><div class="cal-cell off"></div>
+    <div class="cal-cell"><div class="cal-num">1</div><span class="cal-tag cal-wed">🎉 Wedding</span></div>
+    <div class="cal-cell"><div class="cal-num">2</div><span class="cal-tag cal-ath">Athens</span></div>
+    <div class="cal-cell"><div class="cal-num">3</div><span class="cal-tag cal-ath">Athens</span></div>
+    <div class="cal-cell"><div class="cal-num">4</div><span class="cal-tag cal-ath">Athens</span></div>
+    <div class="cal-cell"><div class="cal-num">5</div><span class="cal-tag cal-ath">Athens</span></div>
+    <div class="cal-cell"><div class="cal-num">6</div><span class="cal-tag cal-ath">Athens</span></div>
+    <div class="cal-cell"><div class="cal-num">7</div><span class="cal-tag cal-ath">Athens</span></div>
+    <div class="cal-cell"><div class="cal-num">8</div><span class="cal-tag cal-flt">✈️ ATH→MEL</span></div>
+    <div class="cal-cell"><div class="cal-num">9</div><span class="cal-tag cal-flt">Transit</span></div>
+    <div class="cal-cell"><div class="cal-num">10</div><span class="cal-tag cal-flt">🛬 MEL</span></div>
+    <div class="cal-cell"><div class="cal-num">11</div></div>
+    <div class="cal-cell"><div class="cal-num">12</div></div>
+    <div class="cal-cell"><div class="cal-num">13</div></div>
+    <div class="cal-cell"><div class="cal-num">14</div></div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:10px;">
+    <span class="cal-tag cal-flt">✈️ Flight</span>
+    <span class="cal-tag cal-ldn">🏙 London</span>
+    <span class="cal-tag cal-ath">🏛 Athens/Greece</span>
+    <span class="cal-tag cal-plo">🌊 Peloponnese</span>
+    <span class="cal-tag cal-wed">🎉 Wedding</span>
+    <span class="cal-tag cal-pay">💳 Payment due</span>
+  </div>
+  </div>
+  </div></div>
+
+
   <!-- WELLBEING -->
-  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-wellbeing">🩺 &nbsp;Travel Wellbeing</div>
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-wellbeing">🩺 Travel Wellbeing</div>
   <div class="section-body collapsed" id="body-wellbeing"><div class="booking-grid">
     <div class="booking-card" onclick="toggleCard(this)">
       <div class="booking-card-header">
@@ -485,9 +579,7 @@
         <div class="detail-row"><div class="detail-label">🚗 Road trip</div><div class="detail-value">For the Peloponnese and Lefkada drives — download Google Maps offline for Greece before leaving Marousi. Pack snacks and water in the car. Kids' headphones charged.</div></div>
       </div>
     </div>
-  </div>
   </div></div>
-
 
   <!-- FLIGHTS -->
   <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-flights">✈️ &nbsp;FLIGHTS</div>
