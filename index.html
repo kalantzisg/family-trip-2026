@@ -107,7 +107,6 @@
     padding-left: 4px;
   }
 
-
   /* COLLAPSIBLE SECTIONS */
   .section-label.collapsed,
   .section-label[onclick] {
@@ -413,7 +412,7 @@
     <div class="hero-pill">⟳ Lefkada — Placeholder (post-wedding, unbooked)</div>
     <div class="hero-pill done">✓ Car Rental — booked · €600 cash on pickup</div>
     <div class="hero-pill done">✓ UK ETA — approved for all</div>
-    <div class="hero-pill" style="background:rgba(31,82,168,0.15);border-color:rgba(31,82,168,0.3);color:#5b9bd5">⚽ Match TBD — Brentford/Chelsea or Spurs/Villa · investigating</div>
+    <div class="hero-pill done">✓ Match Booked — Spurs vs Aston Villa · Sat 19 Sep 12:30 London Time (21:30 AEST)</div>
   </div>
 </div>
 
@@ -440,92 +439,91 @@
   <!-- CALENDAR SUMMARY -->
   <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-calendar">📅 Calendar Summary</div>
   <div class="section-body collapsed" id="body-calendar">
-  <div style="margin-bottom:20px;">
-  <style>
-    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; max-width: 100%; margin: 8px 0; }
-    .cal-hdr { text-align: center; font-size: 10px; font-weight: 700; color: var(--ink-soft); padding: 3px; text-transform: uppercase; }
-    .cal-mth { grid-column: 1 / -1; font-size: 13px; font-weight: 700; margin: 10px 0 4px; border-bottom: 2px solid var(--ink); color: var(--ink); font-family: "DM Serif Display", serif; }
-    .cal-cell { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 3px; min-height: 48px; font-size: 9px; }
-    .cal-cell.off { background: transparent; border: none; }
-    .cal-num { font-weight: 700; font-size: 10px; margin-bottom: 2px; color: var(--ink); }
-    .cal-tag { padding: 1px 3px; border-radius: 3px; font-weight: 600; font-size: 8px; line-height: 1.2; margin-bottom: 1px; display: block; }
-    .cal-flt { background: #e6f3f5; color: #0f5f6e; }
-    .cal-ldn { background: #e8f0f9; color: #1B4F8A; }
-    .cal-ath { background: #faeee9; color: #B5451B; }
-    .cal-plo { background: #e6f4ed; color: #2a7a4b; }
-    .cal-wed { background: #f3eaf9; color: #7B3FA0; border: 1px dashed #7B3FA0; }
-    .cal-pay { background: #fff3cd; color: #856404; }
-  </style>
+    <div style="margin-bottom:20px;">
+      <style>
+        .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; max-width: 100%; margin: 8px 0; }
+        .cal-hdr { text-align: center; font-size: 10px; font-weight: 700; color: var(--ink-soft); padding: 3px; text-transform: uppercase; }
+        .cal-mth { grid-column: 1 / -1; font-size: 13px; font-weight: 700; margin: 10px 0 4px; border-bottom: 2px solid var(--ink); color: var(--ink); font-family: "DM Serif Display", serif; }
+        .cal-cell { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 3px; min-height: 48px; font-size: 9px; }
+        .cal-cell.off { background: transparent; border: none; }
+        .cal-num { font-weight: 700; font-size: 10px; margin-bottom: 2px; color: var(--ink); }
+        .cal-tag { padding: 1px 3px; border-radius: 3px; font-weight: 600; font-size: 8px; line-height: 1.2; margin-bottom: 1px; display: block; }
+        .cal-flt { background: #e6f3f5; color: #0f5f6e; }
+        .cal-ldn { background: #e8f0f9; color: #1B4F8A; }
+        .cal-ath { background: #faeee9; color: #B5451B; }
+        .cal-plo { background: #e6f4ed; color: #2a7a4b; }
+        .cal-wed { background: #f3eaf9; color: #7B3FA0; border: 1px dashed #7B3FA0; }
+        .cal-pay { background: #fff3cd; color: #856404; }
+      </style>
 
-  <div class="cal-grid">
-    <div class="cal-mth">September 2026</div>
-    <div class="cal-hdr">M</div><div class="cal-hdr">T</div><div class="cal-hdr">W</div><div class="cal-hdr">T</div><div class="cal-hdr">F</div><div class="cal-hdr">S</div><div class="cal-hdr">S</div>
+      <div class="cal-grid">
+        <div class="cal-mth">September 2026</div>
+        <div class="cal-hdr">M</div><div class="cal-hdr">T</div><div class="cal-hdr">W</div><div class="cal-hdr">T</div><div class="cal-hdr">F</div><div class="cal-hdr">S</div><div class="cal-hdr">S</div>
 
-    <div class="cal-cell off"></div>
-    <div class="cal-cell"><div class="cal-num">1</div></div>
-    <div class="cal-cell"><div class="cal-num">2</div><span class="cal-tag cal-pay">💳 Stoupa</span></div>
-    <div class="cal-cell"><div class="cal-num">3</div></div>
-    <div class="cal-cell"><div class="cal-num">4</div></div>
-    <div class="cal-cell"><div class="cal-num">5</div></div>
-    <div class="cal-cell"><div class="cal-num">6</div></div>
-    <div class="cal-cell"><div class="cal-num">7</div></div>
-    <div class="cal-cell"><div class="cal-num">8</div></div>
-    <div class="cal-cell"><div class="cal-num">9</div></div>
-    <div class="cal-cell"><div class="cal-num">10</div></div>
-    <div class="cal-cell"><div class="cal-num">11</div></div>
-    <div class="cal-cell"><div class="cal-num">12</div></div>
-    <div class="cal-cell"><div class="cal-num">13</div><span class="cal-tag cal-pay">💳 Marousi</span></div>
-    <div class="cal-cell"><div class="cal-num">14</div><span class="cal-tag cal-pay">💳 Marlin</span></div>
-    <div class="cal-cell"><div class="cal-num">15</div></div>
-    <div class="cal-cell"><div class="cal-num">16</div></div>
-    <div class="cal-cell"><div class="cal-num">17</div><span class="cal-tag cal-flt">✈️ MEL→LGW</span></div>
-    <div class="cal-cell"><div class="cal-num">18</div><span class="cal-tag cal-ldn">London</span><span class="cal-tag" style="background:#fff0e6;color:#b35a00">⚽ Match?</span></div>
-    <div class="cal-cell"><div class="cal-num">19</div><span class="cal-tag cal-ldn">London</span></div>
-    <div class="cal-cell"><div class="cal-num">20</div><span class="cal-tag cal-ldn">Top Boy</span></div>
-    <div class="cal-cell"><div class="cal-num">21</div><span class="cal-tag cal-ldn">Ted Lasso</span></div>
-    <div class="cal-cell"><div class="cal-num">22</div><span class="cal-tag cal-flt">✈️ LHR→ATH</span><span class="cal-tag cal-ath">Athens</span></div>
-    <div class="cal-cell"><div class="cal-num">23</div><span class="cal-tag cal-ath">Athens</span></div>
-    <div class="cal-cell"><div class="cal-num">24</div><span class="cal-tag cal-plo">→ Stoupa</span></div>
-    <div class="cal-cell"><div class="cal-num">25</div><span class="cal-tag cal-plo">Stoupa 🏖</span></div>
-    <div class="cal-cell"><div class="cal-num">26</div><span class="cal-tag cal-plo">→ Xylo</span></div>
-    <div class="cal-cell"><div class="cal-num">27</div><span class="cal-tag cal-plo">Xylokastro</span></div>
-    <div class="cal-cell"><div class="cal-num">28</div><span class="cal-tag cal-ath">→ Marousi</span></div>
-    <div class="cal-cell"><div class="cal-num">29</div><span class="cal-tag cal-ath">Athens</span></div>
-    <div class="cal-cell"><div class="cal-num">30</div><span class="cal-tag cal-ath">Athens</span></div>
+        <div class="cal-cell off"></div>
+        <div class="cal-cell"><div class="cal-num">1</div></div>
+        <div class="cal-cell"><div class="cal-num">2</div><span class="cal-tag cal-pay">💳 Stoupa</span></div>
+        <div class="cal-cell"><div class="cal-num">3</div></div>
+        <div class="cal-cell"><div class="cal-num">4</div></div>
+        <div class="cal-cell"><div class="cal-num">5</div></div>
+        <div class="cal-cell"><div class="cal-num">6</div></div>
+        <div class="cal-cell"><div class="cal-num">7</div></div>
+        <div class="cal-cell"><div class="cal-num">8</div></div>
+        <div class="cal-cell"><div class="cal-num">9</div></div>
+        <div class="cal-cell"><div class="cal-num">10</div></div>
+        <div class="cal-cell"><div class="cal-num">11</div></div>
+        <div class="cal-cell"><div class="cal-num">12</div></div>
+        <div class="cal-cell"><div class="cal-num">13</div><span class="cal-tag cal-pay">💳 Marousi</span></div>
+        <div class="cal-cell"><div class="cal-num">14</div><span class="cal-tag cal-pay">💳 Marlin</span></div>
+        <div class="cal-cell"><div class="cal-num">15</div></div>
+        <div class="cal-cell"><div class="cal-num">16</div></div>
+        <div class="cal-cell"><div class="cal-num">17</div><span class="cal-tag cal-flt">✈️ MEL→LGW</span></div>
+        <div class="cal-cell"><div class="cal-num">18</div><span class="cal-tag cal-ldn">London</span></div>
+        <div class="cal-cell"><div class="cal-num">19</div><span class="cal-tag cal-ldn">London</span><span class="cal-tag" style="background:#e6f4ed;color:#2a7a4b">⚽ Spurs v Villa</span></div>
+        <div class="cal-cell"><div class="cal-num">20</div><span class="cal-tag cal-ldn">Top Boy</span></div>
+        <div class="cal-cell"><div class="cal-num">21</div><span class="cal-tag cal-ldn">Ted Lasso</span></div>
+        <div class="cal-cell"><div class="cal-num">22</div><span class="cal-tag cal-flt">✈️ LHR→ATH</span><span class="cal-tag cal-ath">Athens</span></div>
+        <div class="cal-cell"><div class="cal-num">23</div><span class="cal-tag cal-ath">Athens</span></div>
+        <div class="cal-cell"><div class="cal-num">24</div><span class="cal-tag cal-plo">→ Stoupa</span></div>
+        <div class="cal-cell"><div class="cal-num">25</div><span class="cal-tag cal-plo">Stoupa 🏖</span></div>
+        <div class="cal-cell"><div class="cal-num">26</div><span class="cal-tag cal-plo">→ Xylo</span></div>
+        <div class="cal-cell"><div class="cal-num">27</div><span class="cal-tag cal-plo">Xylokastro</span></div>
+        <div class="cal-cell"><div class="cal-num">28</div><span class="cal-tag cal-ath">→ Marousi</span></div>
+        <div class="cal-cell"><div class="cal-num">29</div><span class="cal-tag cal-ath">Athens</span></div>
+        <div class="cal-cell"><div class="cal-num">30</div><span class="cal-tag cal-ath">Athens</span></div>
+      </div>
+
+      <div class="cal-grid" style="margin-top:8px;">
+        <div class="cal-mth">October 2026</div>
+        <div class="cal-hdr">M</div><div class="cal-hdr">T</div><div class="cal-hdr">W</div><div class="cal-hdr">T</div><div class="cal-hdr">F</div><div class="cal-hdr">S</div><div class="cal-hdr">S</div>
+
+        <div class="cal-cell off"></div><div class="cal-cell off"></div><div class="cal-cell off"></div>
+        <div class="cal-cell"><div class="cal-num">1</div><span class="cal-tag cal-wed">🎉 Wedding</span></div>
+        <div class="cal-cell"><div class="cal-num">2</div><span class="cal-tag cal-ath">Athens</span></div>
+        <div class="cal-cell"><div class="cal-num">3</div><span class="cal-tag cal-ath">Athens</span></div>
+        <div class="cal-cell"><div class="cal-num">4</div><span class="cal-tag cal-ath">Athens</span></div>
+        <div class="cal-cell"><div class="cal-num">5</div><span class="cal-tag cal-ath">Athens</span></div>
+        <div class="cal-cell"><div class="cal-num">6</div><span class="cal-tag cal-ath">Athens</span></div>
+        <div class="cal-cell"><div class="cal-num">7</div><span class="cal-tag cal-ath">Athens</span></div>
+        <div class="cal-cell"><div class="cal-num">8</div><span class="cal-tag cal-flt">✈️ ATH→MEL</span></div>
+        <div class="cal-cell"><div class="cal-num">9</div><span class="cal-tag cal-flt">Transit</span></div>
+        <div class="cal-cell"><div class="cal-num">10</div><span class="cal-tag cal-flt">🛬 MEL</span></div>
+        <div class="cal-cell"><div class="cal-num">11</div></div>
+        <div class="cal-cell"><div class="cal-num">12</div></div>
+        <div class="cal-cell"><div class="cal-num">13</div></div>
+        <div class="cal-cell"><div class="cal-num">14</div></div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:10px;">
+        <span class="cal-tag cal-flt">✈️ Flight</span>
+        <span class="cal-tag cal-ldn">🏙 London</span>
+        <span class="cal-tag cal-ath">🏛 Athens/Greece</span>
+        <span class="cal-tag cal-plo">🌊 Peloponnese</span>
+        <span class="cal-tag cal-wed">🎉 Wedding</span>
+        <span class="cal-tag cal-pay">💳 Payment due</span>
+      </div>
+    </div>
   </div>
-
-  <div class="cal-grid" style="margin-top:8px;">
-    <div class="cal-mth">October 2026</div>
-    <div class="cal-hdr">M</div><div class="cal-hdr">T</div><div class="cal-hdr">W</div><div class="cal-hdr">T</div><div class="cal-hdr">F</div><div class="cal-hdr">S</div><div class="cal-hdr">S</div>
-
-    <div class="cal-cell off"></div><div class="cal-cell off"></div><div class="cal-cell off"></div>
-    <div class="cal-cell"><div class="cal-num">1</div><span class="cal-tag cal-wed">🎉 Wedding</span></div>
-    <div class="cal-cell"><div class="cal-num">2</div><span class="cal-tag cal-ath">Athens</span></div>
-    <div class="cal-cell"><div class="cal-num">3</div><span class="cal-tag cal-ath">Athens</span></div>
-    <div class="cal-cell"><div class="cal-num">4</div><span class="cal-tag cal-ath">Athens</span></div>
-    <div class="cal-cell"><div class="cal-num">5</div><span class="cal-tag cal-ath">Athens</span></div>
-    <div class="cal-cell"><div class="cal-num">6</div><span class="cal-tag cal-ath">Athens</span></div>
-    <div class="cal-cell"><div class="cal-num">7</div><span class="cal-tag cal-ath">Athens</span></div>
-    <div class="cal-cell"><div class="cal-num">8</div><span class="cal-tag cal-flt">✈️ ATH→MEL</span></div>
-    <div class="cal-cell"><div class="cal-num">9</div><span class="cal-tag cal-flt">Transit</span></div>
-    <div class="cal-cell"><div class="cal-num">10</div><span class="cal-tag cal-flt">🛬 MEL</span></div>
-    <div class="cal-cell"><div class="cal-num">11</div></div>
-    <div class="cal-cell"><div class="cal-num">12</div></div>
-    <div class="cal-cell"><div class="cal-num">13</div></div>
-    <div class="cal-cell"><div class="cal-num">14</div></div>
-  </div>
-
-  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:10px;">
-    <span class="cal-tag cal-flt">✈️ Flight</span>
-    <span class="cal-tag cal-ldn">🏙 London</span>
-    <span class="cal-tag cal-ath">🏛 Athens/Greece</span>
-    <span class="cal-tag cal-plo">🌊 Peloponnese</span>
-    <span class="cal-tag cal-wed">🎉 Wedding</span>
-    <span class="cal-tag cal-pay">💳 Payment due</span>
-  </div>
-  </div>
-  </div></div>
-
 
   <!-- WELLBEING -->
   <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-wellbeing">🩺 Travel Wellbeing</div>
@@ -795,6 +793,32 @@
 
   </div></div>
 
+  <!-- MATCH BOOKING DETAILS -->
+  <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-match">⚽ &nbsp;MATCH BOOKING DETAILS</div>
+  <div class="section-body collapsed" id="body-match"><div class="booking-grid">
+    <div class="booking-card" onclick="toggleCard(this)">
+      <div class="booking-card-header">
+        <div class="booking-icon" style="background:#e8f0f9;">⚽</div>
+        <div class="meta">
+          <div class="title">Spurs vs Aston Villa · P1 Travel</div>
+          <div class="subtitle">Order P1F9G0EWAFVQ · Sat 19 Sep 2026, 12:30 London Time (21:30 AEST) · 5 Persons · €1,375 Paid</div>
+        </div>
+        <div class="status-badge status-confirmed">✓ Confirmed</div>
+      </div>
+      <div class="booking-card-body">
+        <div class="detail-row"><div class="detail-label">Order Number</div><div class="detail-value" style="font-family:monospace;font-weight:600">P1F9G0EWAFVQ</div></div>
+        <div class="detail-row"><div class="detail-label">Event</div><div class="detail-value">Tottenham Hotspur vs Aston Villa</div></div>
+        <div class="detail-row"><div class="detail-label">Date &amp; Time</div><div class="detail-value">Sat 19 Sep 2026 · 12:30 London Time (BST) / 21:30 Melbourne (AEST)</div></div>
+        <div class="detail-row"><div class="detail-label">Venue</div><div class="detail-value">Tottenham Hotspur Stadium, London</div></div>
+        <div class="detail-row"><div class="detail-label">Package</div><div class="detail-value">5x Travel Club Longside Premium</div></div>
+        <div class="detail-row"><div class="detail-label">Main Booker</div><div class="detail-value">George Kalantzis (kalantzisg@gmail.com)</div></div>
+        <div class="detail-row"><div class="detail-label">Travellers (5)</div><div class="detail-value">George, Panagiota, Lucas, Atticus, James Kalantzis</div></div>
+        <div class="detail-row"><div class="detail-label">Total Cost</div><div class="detail-value"><span class="amount">EUR 1,375.00</span> (€275.00/person incl. fees) · Paid in full ✓</div></div>
+        <div class="detail-row"><div class="detail-label">E-tickets</div><div class="detail-value">Delivered to email 1–3 days before event date</div></div>
+      </div>
+    </div>
+  </div></div>
+
   <!-- CAR RENTAL -->
   <div class="section-label collapsed" onclick="toggleSection(this)" id="sec-car">🚗 &nbsp;CAR RENTAL</div>
   <div class="section-body collapsed" id="body-car"><div class="booking-grid">
@@ -849,7 +873,6 @@
     </div>
   </div></div>
 
-
   <!-- ITINERARY -->
   <div class="section-label" onclick="toggleSection(this)" id="sec-itinerary">📅 &nbsp;DAY BY DAY</div>
   <div class="section-body" id="body-itinerary"><div class="timeline">
@@ -893,45 +916,21 @@
       <div class="tl-dot"></div>
       <div class="tl-card">
         <div class="tl-card-header">
-          <div class="tl-date">Fri 18 – Sun 20 Sep</div>
-          <div class="tl-title">⚽ Premier League match — deciding between two options</div>
-          <div class="tl-badge" style="background:#fff0e6;color:#b35a00">Investigating</div>
+          <div class="tl-date">Sat 19 Sep</div>
+          <div class="tl-title">⚽ Premier League: Spurs vs Aston Villa</div>
+          <div class="tl-badge badge-london">Booked</div>
         </div>
         <div class="tl-card-body">
-
-          <strong>OPTION A: <s>Brentford vs Chelsea</s> — Fri 18 Sep 20:00 BST · Gtech Community Stadium</strong> &nbsp;<a href="https://maps.google.com/?q=Gtech+Community+Stadium+Brentford" target="_blank" style="color:var(--london)">📍 Map</a><br>
-          General admission ruled out (requires 100+ TAPS membership). Options remaining:<br>
-          · <strong>Vivid Seats</strong> &nbsp;<a href="https://www.vividseats.com/brentford-fc-tickets--sports-soccer/performer/67011" target="_blank" style="color:var(--london)">vividseats.com</a> — 100% Buyer Guarantee, All-In Pricing<br>
-          · <strong>Football Ticket Net</strong> — quote: AUD 5,218.47 for 5 (Away Section, ~36% in fees)<br>
-          · <strong>Brentford Hospitality via Alfie</strong> — Legends Loge £1,750pp (~AUD 17,200 total) · Golf Rooms + ticket £375pp (~AUD 3,690 total)<br>
-          ⚠ May move to Sat 19 Sep 20:00 if EFL Cup clash — confirm before purchasing<br><br>
-
-          <strong>OPTION B: Spurs vs Aston Villa — Sat 19 Sep 12:30 · Tottenham Hotspur Stadium</strong> &nbsp;<a href="https://maps.google.com/?q=Tottenham+Hotspur+Stadium+London" target="_blank" style="color:var(--london)">📍 Map</a><br>
-          Better value options available through official resellers — investigate in this order:<br><br>
-
-          <div style="background:#e6f4ed;border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:8px;">
-          🥇 <strong>P1 Travel (official Spurs reseller)</strong> &nbsp;<a href="https://www.p1travel.com/football/tottenham-hotspur/spurs-v-aston-villa" target="_blank" style="color:var(--london)">p1travel.com</a><br>
-          · Shortside Stadium Tour Package — from £150pp → ~AUD ~1,475 for 5 🟢<br>
-          · Longside Stadium Tour Package — from £171pp → ~AUD ~1,680 for 5 🟢<br>
-          Includes match ticket + stadium tour the day before. Official reseller. Check 5 seats together before booking at starting price.
-          </div>
-
-          <div style="background:#e6f4ed;border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:8px;">
-          🥈 <strong>Champions Travel (official Spurs reseller)</strong> &nbsp;<a href="https://www.champions-travel.com/spurs-v-aston-villa" target="_blank" style="color:var(--london)">champions-travel.com</a><br>
-          · From ~$129 USD pp → treat as starting price only until 5 seats selected together 🟢
-          </div>
-
-          <div style="background:#e6f4ed;border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:8px;">
-          🥉 <strong>Travel Connection via Travelzoo</strong><br>
-          · £167pp → ~AUD ~1,640 for 5 🟢 — worth checking if offer allows 5 together
-          </div>
-
-          <div style="background:#fff8e6;border-radius:8px;padding:10px 14px;font-size:13px;">
-          🔴 <strong>Spurs Stadium Social</strong> — £449pp → ~AUD ~4,415 for 5. Skip unless nothing else guarantees 5 together.
+          <strong>Tottenham Hotspur Stadium · Kick-off 12:30 London Time (BST) / 21:30 AEST</strong> &nbsp;<a href="https://maps.google.com/?q=Tottenham+Hotspur+Stadium+London" target="_blank" style="color:var(--london)">📍 Map</a><br><br>
+          <div style="background:#e6f4ed;border-radius:8px;padding:12px 14px;font-size:13px;">
+            <strong>✓ Booked via P1 Travel — Travel Club Longside Premium</strong><br>
+            · <strong>Order Number:</strong> P1F9G0EWAFVQ<br>
+            · <strong>Quantity:</strong> 5 tickets (George, Panagiota, Lucas, Atticus, James Kalantzis)<br>
+            · <strong>Total Paid:</strong> €1,375 incl. fees (€275 per person)<br>
+            · <strong>Inclusions:</strong> Padded executive longside seats, 3-hour pre-match &amp; 2-hour post-match lounge access, small bites, half-time drink, official matchday programme, Spurs legend appearance.<br>
+            · <strong>Delivery:</strong> E-tickets sent to kalantzisg@gmail.com 1–3 days before event date.
           </div><br>
-
-          <strong>Recommended approach:</strong> P1 Travel first (5 together, ≤£200pp target) → Champions Travel → Travel Connection → Stadium Social as last resort.<br><br>
-          <strong>Also worth checking:</strong> Fulham vs Man Utd — Sun 20 Sep 16:30 (Craven Cottage) as a third option if neither of the above works out.
+          <strong>Getting there:</strong> Train/Overground from London Bridge to White Hart Lane (~35 min). Lounge opens 3 hours before kick-off (09:30 BST).
         </div>
       </div>
     </div>
@@ -945,11 +944,11 @@
           <div class="tl-badge badge-london">London</div>
         </div>
         <div class="tl-card-body">
-          <strong>🚌 Hop-on Hop-off Bus (Sat 19 or Sun 20)</strong><br>
+          <strong>🚌 Hop-on Hop-off Bus (Sat 19 AM or Sun 20)</strong><br>
           Best way to cover all major sights — Big Ben, Buckingham Palace, Tower Bridge, Tate Modern, London Eye, South Kensington museums — without navigating the Tube with bags. Big Bus Tours, Tootbus or Golden Tours all cover the same route. Book online in advance (up to 40% off). Pair with the Thames River Cruise add-on. <a href="https://www.bigbustours.com/en/london/london-bus-tours/" target="_blank" style="color:var(--london)">bigbustours.com</a><br><br>
 
           <strong>⚽ Football kit &amp; sports shopping — Oxford Street</strong><br>
-          Sports Direct flagship (150 Oxford St, 50,000 sq ft — biggest in UK), Nike Town (236 Oxford St) and Adidas (415 Oxford St) are all within 5 min walk of each other. All Premier League kits in stock, England 2026 World Cup kit, boots, training wear. Club Megastores: Chelsea FC at Stamford Bridge (on the way to Brentford) · Arsenal shop at Emirates Stadium.<br><br>
+          Sports Direct flagship (150 Oxford St, 50,000 sq ft — biggest in UK), Nike Town (236 Oxford St) and Adidas (415 Oxford St) are all within 5 min walk of each other. All Premier League kits in stock, England 2026 World Cup kit, boots, training wear. Club Megastores: Chelsea FC at Stamford Bridge · Arsenal shop at Emirates Stadium.<br><br>
 
           <strong>🎬 Top Boy — Sun 20 Sep (East London)</strong><br>
           Haggerston Overground → De Beauvoir Estate → Ridley Road Market (Dalston) → London Fields → Number One Cafe "Top Boy breakfast" → DLR to Samuda Estate, Isle of Dogs. Full day.<br><br>
@@ -1008,16 +1007,16 @@
           Pre-book the night before. Pickup 08:45 — arrive LHR before 10:30 for the 12:15 flight.<br><br>
 
           <strong>🚇 Option 2 — Elizabeth Line (best public transport option)</strong><br>
-          London Bridge → Bond Street (Jubilee line, 15 min) → Elizabeth line direct to LHR Terminals 2&3 (~33 min). <cite index="5-1">Cost: ~£15.50 per person contactless/Oyster (2026 fare).</cite> Total ~50–55 min journey. <cite index="5-1">Dedicated luggage racks, air-conditioned, spacious carriages</cite> — far more comfortable than Piccadilly for groups with bags. 5 tickets = ~£77.50 total.<br><br>
+          London Bridge → Bond Street (Jubilee line, 15 min) → Elizabeth line direct to LHR Terminals 2&3 (~33 min). Cost: ~£15.50 per person contactless/Oyster (2026 fare). Total ~50–55 min journey. Dedicated luggage racks, air-conditioned, spacious carriages — far more comfortable than Piccadilly for groups with bags. 5 tickets = ~£77.50 total.<br><br>
 
           <strong>🚇 Option 3 — Piccadilly Line (cheapest Tube option)</strong><br>
-          London Bridge → Green Park (Jubilee, ~10 min) → Piccadilly line direct to LHR (~50 min from Green Park). <cite index="2-1">Cost: £5.90 per person contactless/Oyster (2026 flat fare).</cite> ~1h 10m total. 5 tickets = ~£29.50 total. <cite index="3-1">⚠️ Engineering works on the Piccadilly Line are ongoing — it may be closed on weekends. Check TfL before travel.</cite><br><br>
+          London Bridge → Green Park (Jubilee, ~10 min) → Piccadilly line direct to LHR (~50 min from Green Park). Cost: £5.90 per person contactless/Oyster (2026 flat fare). ~1h 10m total. 5 tickets = ~£29.50 total. ⚠️ Engineering works on the Piccadilly Line are ongoing — it may be closed on weekends. Check TfL before travel.<br><br>
 
           <strong>🚅 Option 4 — Heathrow Express (fastest, priciest)</strong><br>
-          London Bridge → Paddington (Jubilee + walk, ~20 min) → Heathrow Express (~15 min non-stop). <cite index="2-1">Cost: £25.00 on-the-day standard single per person (2026). Book 90+ days ahead for as low as £10/person.</cite> Total ~45 min but involves the Paddington transfer. <cite index="2-1">Includes Wi-Fi, power sockets, at-seat tables.</cite> 5 tickets walk-up = £125.<br><br>
+          London Bridge → Paddington (Jubilee + walk, ~20 min) → Heathrow Express (~15 min non-stop). Cost: £25.00 on-the-day standard single per person (2026). Book 90+ days ahead for as low as £10/person. Total ~45 min but involves the Paddington transfer. Includes Wi-Fi, power sockets, at-seat tables. 5 tickets walk-up = £125.<br><br>
 
           <strong>🚌 Option 5 — National Express Coach</strong><br>
-          <cite index="3-1">From Victoria Coach Station — suits groups with heavy luggage, no changes needed once aboard.</cite> London Bridge → Victoria (Tube ~10 min) → coach to LHR Central ~1h 50m. Book ahead for best price (~£10–15/person). Good fallback but slow — leave by 08:00 for a 12:15 flight.<br><br>
+          From Victoria Coach Station — suits groups with heavy luggage, no changes needed once aboard. London Bridge → Victoria (Tube ~10 min) → coach to LHR Central ~1h 50m. Book ahead for best price (~£10–15/person). Good fallback but slow — leave by 08:00 for a 12:15 flight.<br><br>
 
           <div style="background:#e8f0f9;border-radius:8px;padding:10px 14px;font-size:13px;margin-top:4px;">
           <strong>📊 Summary — London Bridge → Heathrow, 5 people, luggage</strong><br>
@@ -1050,13 +1049,13 @@
           <strong>⚽ Football activities for the boys — training &amp; experience:</strong><br><br>
 
           <strong>1. Paradise Football Park</strong> &nbsp;<a href="https://football.paradisepark.gr/" target="_blank" style="color:var(--london)">🌐 paradisepark.gr</a><br>
-          <cite index="2-1">Modern UEFA-standard mini football facility in Athens with five pitches — runs independent tournaments, corporate tournaments, friendly matches and a Football Academy for kids aged 4–17.</cite> The boys could book a casual pitch session (5x5 or 6x6) or look into whether the academy runs any visitor/trial sessions during September. Great for a competitive kickabout in a proper Greek football environment.<br><br>
+          Modern UEFA-standard mini football facility in Athens with five pitches — runs independent tournaments, corporate tournaments, friendly matches and a Football Academy for kids aged 4–17. The boys could book a casual pitch session (5x5 or 6x6) or look into whether the academy runs any visitor/trial sessions during September. Great for a competitive kickabout in a proper Greek football environment.<br><br>
 
           <strong>2. Panathinaikos Soccer Schools — Academy visit</strong> &nbsp;<a href="https://www.pao.gr/en/academy/soccer-schools/" target="_blank" style="color:var(--london)">🌐 pao.gr/academy</a><br>
-          <cite index="5-1">Panathinaikos Soccer Schools runs a network of accredited schools across Greece offering a comprehensive training program, football and educational activities, and visits to Apostolos Nicolaidis Stadium to watch Panathinaikos matches.</cite> Worth contacting them to ask whether visiting kids can observe a training session or participate in an academy day. Their training centre is at Koropi (suburb of Athens) — <cite index="7-1">G. Kalafatis Training Centre, Elaias St., Bourboutsana, Koropi. Tel: 210-6647163.</cite><br><br>
+          Panathinaikos Soccer Schools runs a network of accredited schools across Greece offering a comprehensive training program, football and educational activities, and visits to Apostolos Nicolaidis Stadium to watch Panathinaikos matches. Worth contacting them to ask whether visiting kids can observe a training session or participate in an academy day. Their training centre is at Koropi (suburb of Athens) — G. Kalafatis Training Centre, Elaias St., Bourboutsana, Koropi. Tel: 210-6647163.<br><br>
 
           <strong>3. Watch a Super League live match</strong><br>
-          <cite index="8-1">Panathinaikos play all home matches at the Athens Olympic Stadium in the 2026-27 season.</cite> <cite index="8-1">The Super League season started 22 August 2026.</cite> A live Panathinaikos home match during your stay would be a great experience for the boys — Greek football atmosphere is passionate and raw. Check <a href="https://www.slgr.gr/en/schedule/" target="_blank" style="color:var(--london)">slgr.gr</a> for fixtures during 22 Sep–8 Oct.<br><br>
+          Panathinaikos play all home matches at the Athens Olympic Stadium in the 2026-27 season. The Super League season started 22 August 2026. A live Panathinaikos home match during your stay would be a great experience for the boys — Greek football atmosphere is passionate and raw. Check <a href="https://www.slgr.gr/en/schedule/" target="_blank" style="color:var(--london)">slgr.gr</a> for fixtures during 22 Sep–8 Oct.<br><br>
 
           <strong>4. Kickabout options</strong><br>
           Marousi has several local football pitches and sports parks. Ask Dionisios for the nearest 5-a-side pitch — most Greek neighbourhoods have them and they're cheap to hire by the hour. Great for an evening session with the family.
@@ -1108,7 +1107,6 @@
       </div>
     </div>
 
-
     <div class="tl-item athens" onclick="toggleTL(this)">
       <div class="tl-dot"></div>
       <div class="tl-card">
@@ -1150,16 +1148,11 @@
           <strong>🚗 Spontaneous coastal road trip — not booked in advance, decided on the go:</strong><br><br>
           <strong>Fri 2 – Tue 6 Oct — Lefkada / Vassiliki</strong><br>
           Drive across Rio-Antirio bridge to Lefkada (~2.5h from Xylokastro) — no ferry needed. Vassiliki for warm autumn swims, beach days, seafront tavernas. Look at: Elisso Hotel (9.2), Cosmos Vassiliki (sea view family rooms), Odeon Hotel (private beach, free canoes &amp; bikes).<br><br>
-          <strong>Tue 6 Oct</strong> — Drive back to Marousi (~4h).
-        </div>
-      </div>
-    </div>
-        </div>
-        <div class="tl-card-body">
+          <strong>Tue 6 Oct</strong> — Drive back to Marousi (~4h).<br><br>
           <strong>🚗 Drive: Marousi → Vassiliki, Lefkada</strong><br>
           ~360km direct · approximately 4–4.5 hours. Good motorway via Corinth and Rio-Antirio bridge, then across to Lefkada via the floating bridge — no ferry needed.<br><br>
           <strong>Base: Vassiliki, southern Lefkada</strong><br>
-          Lefkada's most picturesque fishing village — perfect for families, shallow warm waters, cafes and restaurants right on the beach. Late September/early October the crowds are gone, the water is still warm, and the pace drops right down. Pick a spot and zone out.<br><br>
+          Lefkada's most picturesque fishing village — perfect for families, shallow warm waters, cafes and restaurants right on the beach. Late September/early October the crowds are gone, the water is still warm, and the pace drops right down. Pick a spot and zone out.
         </div>
       </div>
     </div>
@@ -1203,9 +1196,8 @@
         </div>
       </div>
     </div>
-    </div>
 
-  </div></div></div>
+  </div></div>
 
   <!-- TO DO -->
   <div class="section-label" onclick="toggleSection(this)" id="sec-todos">☑️ &nbsp;REMAINING TO-DOS</div>
@@ -1223,10 +1215,28 @@
     <div class="todo-item" onclick="toggleTodo(this)">
       <div class="todo-checkbox"></div>
       <div class="todo-content">
-        <div class="todo-title">💷💶 Order foreign currency via Smoney — city pickup next week</div>
+        <div class="todo-title">✈️ Flag unnotified aircraft change with Emirates (Post-London leg)</div>
+        <div class="todo-desc">Submit feedback/complaint regarding unnotified swap from A380 to Boeing 777 on EK009 (DXB→LGW) · Highlight that A380 long-haul experience was specifically sought based on past travel preferences</div>
+      </div>
+      <div class="todo-priority priority-soon">Post-flight</div>
+    </div>
+
+    <div class="todo-item done-item" onclick="toggleTodo(this)">
+      <div class="todo-checkbox">✓</div>
+      <div class="todo-content">
+        <div class="todo-title">⚽ Spurs vs Aston Villa match tickets booked ✓ (Order: P1F9G0EWAFVQ)</div>
+        <div class="todo-desc">5x Travel Club Longside Premium tickets booked via P1 Travel (€1,375 total) · Padded longside seats together + lounge access before/after match</div>
+      </div>
+      <div class="todo-priority priority-when">Done</div>
+    </div>
+
+    <div class="todo-item done-item" onclick="toggleTodo(this)">
+      <div class="todo-checkbox">✓</div>
+      <div class="todo-content">
+        <div class="todo-title">💷💶 Order foreign currency via Smoney — city pickup next week ✓</div>
         <div class="todo-desc">£300 GBP (London spending money) + €800 EUR (Greece — incl. €600 car rental balance cash on pickup + Xylokastro hotel + general) · Order via Smoney app for in-store city pickup</div>
       </div>
-      <div class="todo-priority priority-urgent">This week</div>
+      <div class="todo-priority priority-when">Done</div>
     </div>
 
     <div class="todo-item done-item" onclick="toggleTodo(this)">
@@ -1247,6 +1257,10 @@
       <div class="todo-priority priority-when">Done</div>
     </div>
 
+  </div></div>
+
+</div>
+
 <script>
   function toggleSection(label) {
     const bodyId = label.id.replace('sec-', 'body-');
@@ -1254,21 +1268,23 @@
     label.classList.toggle('collapsed');
     if (body) body.classList.toggle('collapsed');
   }
-  // Sections that start open don't need collapsed class on label — arrow handled via CSS
-  // Sections that start closed already have 'collapsed' on both label and body
+
   function toggleCard(card) {
     const body = card.querySelector('.booking-card-body');
     body.classList.toggle('open');
   }
+
   function toggleTL(item) {
     const body = item.querySelector('.tl-card-body');
     body.classList.toggle('open');
   }
+
   function toggleTodo(item) {
     item.classList.toggle('done-item');
     const cb = item.querySelector('.todo-checkbox');
     cb.innerHTML = item.classList.contains('done-item') ? '✓' : '';
   }
+
   // Countdown
   function updateCountdown() {
     const departure = new Date('2026-09-17T05:15:00+10:00');
@@ -1310,7 +1326,6 @@
     if (el('pay-marousi'))   el('pay-marousi').outerHTML   = '<span id="pay-marousi">'   + payLabel(daysUntil('2026-09-13'), 'payment') + '</span>';
     if (el('pay-stoupa'))    el('pay-stoupa').outerHTML    = '<span id="pay-stoupa">'    + payLabel(daysUntil('2026-09-02'), 'payment') + '</span>';
     if (el('pay-marlin'))    el('pay-marlin').outerHTML    = '<span id="pay-marlin">'    + payLabel(daysUntil('2026-09-14'), 'payment') + '</span>';
-    // Car rental deposit already paid - no payment countdown needed
   }
   updatePayments();
   setInterval(updatePayments, 3600000);
